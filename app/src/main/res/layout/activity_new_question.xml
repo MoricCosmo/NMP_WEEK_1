@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewQuestionActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/textQuestion"
+                style="@style/TextAppearance.Material3.HeadlineLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtLabelQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textQuestion"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/txtNewQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintTop_toBottomOf="@id/txtLabelQuestion"
+                app:layout_constraintStart_toStartOf="parent"
+                android:hint="Enter Question" />
+
+            <TextView
+                android:id="@+id/txtLabelQuestionImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question Image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtNewQuestion"
+                android:layout_marginTop="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroupImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLabelQuestionImage">
+
+                <RadioButton
+                    android:id="@+id/radioTemplate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Use Template"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/radioUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Use External Image (URL)" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textLabelChooseImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioGroupImage"
+                android:layout_marginTop="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textLabelChooseImage"/>
+
+            <TextView
+                android:id="@+id/textLabelImageUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image URL"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinnerImage"
+                android:layout_marginTop="16dp"/>
+
+            <EditText
+                android:id="@+id/txtImageUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textUri"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textLabelImageUrl"
+                android:hint="Enter Valid Image Url"/>
+
+            <TextView
+                android:id="@+id/textLabelAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Answer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtImageUrl"
+                android:layout_marginTop="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroupAnswer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textLabelAnswer">
+
+                <RadioButton
+                    android:id="@+id/radioTrue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="True"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/radioFals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="False" />
+            </RadioGroup>
+
+            <ImageView
+                android:id="@+id/selectedImageQuestion"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioGroupAnswer"
+                android:layout_marginTop="16dp"/>
+
+            <CheckBox
+                android:id="@+id/checkboxEnabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enabled"
+                android:layout_marginTop="16dp"
+                android:checked="true"
+                app:layout_constraintTop_toBottomOf="@id/selectedImageQuestion"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+            <Button
+                android:id="@+id/buttonSumbit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/selectedImageQuestion"
+                android:layout_marginTop="24dp"
+                android:text="Submit"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
